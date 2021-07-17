@@ -1,2 +1,2 @@
 # Algorithm
-Solving lgorithm
+Solving Algorithms
