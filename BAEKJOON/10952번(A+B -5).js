@@ -27,18 +27,19 @@
 
 //fs모듈로 입력값 받아오기
 var fs = require('fs');
-var input = fs.readFileSync('/dev/stdin').toString().split(' ');
+var inputs = fs.readFileSync('/dev/stdin').toString().split('/n');
+var input = inputs.split(' ');
+trim()
 
-//입력값을 각각 정수 A,B로 변환
-let A = parseInt(input[0]);
-let B = parseInt(input[1]);
-let result = A + B;
-
-for(i=0;;i++){
-    if(!result){
+for(i=0;i<inputs.length;i++){
+    let A = parseInt(input[i]);
+    let B = parseInt(input[i+1]);
+    let result = A + B;
+    if(result===0){
+        console.log(result);
         break;
-    }
-    console.log(result);
+    } else {
+    console.log(result)};
 };
 
-//현재 출력 초과 나오는 상태
+//현재 런타임에러 나오는 상태
