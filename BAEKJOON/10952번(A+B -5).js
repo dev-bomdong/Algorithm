@@ -42,4 +42,4 @@ for(i=0;i<inputs.length;i++){
     console.log(result)};
 };
 
-//현재 런타임에러 나오는 상태
+//현재 런타임에러 나오는 상태. 보완필요
