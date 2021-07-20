@@ -58,20 +58,9 @@
 */
 
 var fs = require('fs');
-var input = fs.readFileSync('/dev/stdin').toString().split('/n');
-trim();
+var input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
-for (i=0; i<input.length; i++) {
-    let Num = parseInt(input[i]);
-    let arrNumber = new Array();
-    let A = arrNumber[i];
-    A=parseIn(Num%42);
-   
-        for(let j=i+1; j<input.length; j++){
-            if(A === arrNumber[j]){
-                getUniques(arrNumber);
-        } console.log(arrNumber.length);
-    };
-};
+let arrNumber = input.map(x => x % 42);
 
-//현재 런타임 에러 나는 중
+let set = new Set(arrNumber);
+console.log(set.size);
