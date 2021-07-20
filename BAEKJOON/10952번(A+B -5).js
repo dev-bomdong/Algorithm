@@ -25,21 +25,16 @@
 7
 */
 
-//fs모듈로 입력값 받아오기
+//fs모듈로 입력값 받아오기.입력값은 우선 줄 단위로만 나눈다.
 var fs = require('fs');
-var inputs = fs.readFileSync('/dev/stdin').toString().split('/n');
-var input = inputs.split(' ');
-trim()
+var input = fs.readFileSync('/dev/stdin').toString().split('\n');
 
-for(i=0;i<inputs.length;i++){
-    let A = parseInt(input[i]);
-    let B = parseInt(input[i+1]);
+for(let i=0;i<input.length;i++){
+    let A = parseInt(input[i].split(' ')[0]);
+    let B = parseInt(input[i].split(' ')[1]);
     let result = A + B;
     if(result===0){
-        console.log(result);
         break;
-    } else {
-    console.log(result)};
+    } else {console.log(result)
+        };
 };
-
-//현재 런타임에러 나오는 상태. 보완필요
